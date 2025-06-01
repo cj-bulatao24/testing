@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CFGHS SERT 25-26</title>
     <style>
-        /* Reset some defaults */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -17,6 +16,8 @@
             --darkblue: #1484CD;
             --lightblue: #82CAFF;
             --gray: #3a3a3a;
+            --shadow-blur: clamp(0.5em, 3vw, 2em);
+            --shadow-spread: clamp(0.2em, 1vw, 1em);
         }
 
         body {
@@ -41,7 +42,7 @@
             padding: 1.5rem 0;
             position: sticky;
             top: 0;
-            box-shadow: 0em 1em 0.5em rgba(0, 0, 0, 0.5);
+            box-shadow: 0 1em var(--shadow-blur) var(--shadow-spread) rgba(0, 0, 0, 0.5);
         }
 
         .right-last {
@@ -87,7 +88,7 @@
             background: var(--vdarkblue);
             color: white;
             text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.3);
-            font-size: 1.4375rem; 
+            font-size: clamp(1rem, 2.3vw, 1.5rem);
             font-weight: bold;
             box-shadow: 0rem 0.3125rem 0.625rem 0.125rem rgba(0, 0, 0, 0.342);
             cursor: pointer;
@@ -108,7 +109,6 @@
             padding: 1rem;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             header, footer, main {
                 padding: 1rem;
@@ -135,22 +135,19 @@
 <body>
     <header>
         <nav>
-            <img id="section-logo" src="images/CFGHS LOGO.png" alt="Logo of CFGHS">
-            <p>CFGHS</p>
-            <a class="current_page_item" href="CFGHS.html">Homepage</a>
-            <a class="right-last" href="Contact Us/Contact Us.html">Contact Us
-            </a>
+            <img id="section-logo" src="" alt="Logo">
+            <p>SERT</p>
+            <a class="current_page_item" href="">Homepage</a>
+            <a class="right-last" href="">Event</a>
         </nav>
     </header>
 
     <main>
-        <h2>Main Content Area</h2>
-        <p>This is where your main body content goes. You can add sections, articles, images, or anything you need here.</p>
+        
     </main>
 
     <footer>
         <p>Your Footer</p>
-        <!-- Put your footer content here -->
     </footer>
 </body>
 </html>
