@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Template</title>
+    <style>
+        /* Reset some defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: #4a90e2; /* blue for CJ */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header, footer, main {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, footer {
+                font-size: 1rem;
+            }
+
+            main {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Header</h1>
+        <!-- Put your header content here -->
+    </header>
+
+    <main>
+        <h2>Main Content Area</h2>
+        <p>This is where your main body content goes. You can add sections, articles, images, or anything you need here.</p>
+    </main>
+
+    <footer>
+        <p>Your Footer</p>
+        <!-- Put your footer content here -->
+    </footer>
+</body>
+</html>
