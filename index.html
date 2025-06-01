@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout Template</title>
+    <title>CFGHS SERT 25-26</title>
     <style>
         /* Reset some defaults */
         * {
@@ -12,18 +12,91 @@
             padding: 0;
         }
 
+        :root{
+            --vdarkblue: #0066bd;
+            --darkblue: #1484CD;
+            --lightblue: #82CAFF;
+            --gray: #3a3a3a;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             font-family: Arial, sans-serif;
+            backdrop-filter: blur(10px);
+            z-index: 100;
         }
 
         header, footer {
-            background-color: #4a90e2; /* blue for CJ */
+            background-color: #4a90e2;
             color: white;
             padding: 1rem;
             text-align: center;
+        }
+
+        header{
+            background-color: #20aaf2;
+            text-align: right;
+            padding: 2% 0;
+            position: sticky;
+            top: 0%;
+            box-shadow: 0em 1em 0.5em rgba(0, 0, 0, 0.5);
+
+            .right-last{
+                margin-right: 5%;
+            }
+
+            p{
+                font-family: impact;
+                position: absolute;
+                color: white;
+                left: 6.25rem;
+                top: 0.375rem;
+                font-size: 3.125rem;
+                text-shadow: 0.125rem 0.125rem 0.125rem rgba(0,0,0,0.3);
+            }
+
+            #section-logo{
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                left: 2.5rem;
+                top: 0.75rem;
+                box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+                outline: var(--vdarkblue) solid 0.0625rem;
+                border-radius: 3.125rem;
+            }
+
+            a{
+                padding: 1.25rem 0.625rem;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.644);
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                text-shadow: 0.125rem 0.125rem 0.125rem rgba(0,0,0,0.3);
+                transition: 0.5s ease-out;
+                font-family: arima;
+                border-radius: 0.625rem;
+            }
+
+            a:hover{
+                background: var(--vdarkblue);
+                color: white;
+                text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.3);
+                font-size: 1.4375rem; 
+                font-weight: bold;
+                box-shadow: 0rem 0.3125rem 0.625rem 0.125rem rgba(0, 0, 0, 0.342);
+                cursor: pointer;
+            }
+
+            .current_page_item{
+                background: var(--vdarkblue);
+                color: white;
+                font-weight: bold;
+                box-shadow: 0rem 0.3125rem 0.625rem 0.125rem rgba(0, 0, 0, 0.342);
+            }
+            
         }
 
         main {
@@ -51,8 +124,17 @@
 </head>
 <body>
     <header>
-        <h1>Your Header</h1>
-        <!-- Put your header content here -->
+        <nav>
+            <img id="section-logo" src="images/CFGHS LOGO.png" alt="Logo of CFGHS">
+            <p>CFGHS</p>
+            <a class="current_page_item" href="CFGHS.html">Homepage</a>
+            <a href="Academic Strand/Academic Strand.html">Academic Strands</a>
+            <a href="Features/Features.html">Features</a>
+            <a href="Organization/Organization.html">Organization</a>
+            <a href="Enroll/Enroll.html">Enroll</a>
+            <a class="right-last" href="Contact Us/Contact Us.html">Contact Us
+            </a>
+        </nav>
     </header>
 
     <main>
