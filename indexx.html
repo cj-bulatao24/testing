@@ -112,7 +112,7 @@
 
         .bar {
             position: absolute;
-            height: 3px;
+            height: 5px;
             width: 100%;
             background-color: #fff;
             transition: all 0.3s;
@@ -136,13 +136,13 @@
         }
 
         input[type="checkbox"]:checked ~ .sidebarToggleIcon > .diagonal.part-1 {
-            transform: rotate(135deg);
+            transform: rotate(140deg);
             margin-top: 8px; /* fixed value for proper cross alignment */
         }
 
         input[type="checkbox"]:checked ~ .sidebarToggleIcon > .diagonal.part-2 {
-            transform: rotate(-135deg);
-            margin-top: -9px; /* fixed value for proper cross alignment */
+            transform: rotate(-140deg);
+            margin-top: -5px; /* fixed value for proper cross alignment */
         }
 
     </style>
@@ -156,6 +156,7 @@
         <div class="bar diagonal part-1"></div>
         <div class="bar horizontal"></div>
         <div class="bar diagonal part-2"></div>
+        <div class="bar horizontal"></div>
     </label>
 
     <div id="sidebarMenu">
