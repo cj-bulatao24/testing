@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Menu</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;600');
+
+        html, body {
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        body {
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #1484CD;
+            position: fixed;
+            height: clamp(3rem, 8vh, 4rem);
+            z-index: 10;
+        }
+
+        .contentWrapper {
+            margin: 0 auto;
+            margin-top: clamp(3rem, 8vh, 4rem);
+            display: block;
+            height: 100%;
+            padding: clamp(1rem, 2vh, 2rem);
+        }
+
+        .contentInner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .contentInner div {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: bold;
+            letter-spacing: clamp(1px, 0.3vw, 1.5px);
+            color: #333;
+        }
+
+        #sidebarMenu {
+            height: 100%;
+            position: fixed;
+            right: 0;
+            width: clamp(12rem, 40vw, 18rem);
+            margin-top: clamp(3rem, 8vh, 4rem);
+            transform: translateX(clamp(12rem, 40vw, 18rem));
+            transition: transform 250ms ease-in-out;
+            background: #1484CD;
+            z-index: 9;
+        }
+
+        .sidebarMenuContent {
+            margin: 0;
+            padding: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebarMenuContent li {
+            list-style: none;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: clamp(1rem, 2vh, 1.25rem);
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        .sidebarMenuContent li span {
+            display: block;
+            font-size: clamp(0.6rem, 1.5vw, 0.875rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.3em;
+        }
+
+        .sidebarMenuContent li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        input[type="checkbox"]:checked ~ #sidebarMenu {
+            transform: translateX(0);
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .sidebarToggleIcon {
+            cursor: pointer;
+            position: absolute;
+            top: clamp(1rem, 2vh, 1.5rem);
+            right: clamp(1rem, 2vw, 1.5rem);
+            width: clamp(1.5rem, 4vw, 2rem);
+            height: clamp(1.5rem, 4vw, 2rem);
+            z-index: 99;
+        }
+
+        .bar {
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        .horizontal {
+            margin-top: 3px;
+        }
+
+        .diagonal.part-1,
+        .diagonal.part-2 {
+            position: relative;
+        }
+
+        .diagonal.part-2 {
+            margin-top: 3px;
+        }
+
+        input[type="checkbox"]:checked ~ .sidebarToggleIcon > .horizontal {
+            opacity: 0;
+        }
+
+        input[type="checkbox"]:checked ~ .sidebarToggleIcon > .diagonal.part-1 {
+            transform: rotate(135deg);
+            margin-top: 8px; /* fixed value for proper cross alignment */
+        }
+
+        input[type="checkbox"]:checked ~ .sidebarToggleIcon > .diagonal.part-2 {
+            transform: rotate(-135deg);
+            margin-top: -9px; /* fixed value for proper cross alignment */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+
+    <input type="checkbox" class="toggleSidebarMenu" id="toggleSidebarMenu">
+
+    <label for="toggleSidebarMenu" class="sidebarToggleIcon">
+        <div class="bar diagonal part-1"></div>
+        <div class="bar horizontal"></div>
+        <div class="bar diagonal part-2"></div>
+    </label>
+
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuContent">
+            <li>John Doe <span>Web Developer</span></li>
+            <li><a href="#" target="_blank">Company</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+            <li><a href="#" target="_blank">YouTube</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div class="contentWrapper">
+        <div class="contentInner">
+            <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+        </div>
+    </div>
+
+</body>
+</html>
