@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Squada+One&display=swap');
+
+:root{
+    --vdarkblue: #0066bd;
+    --darkblue: #1484CD;
+    --lightblue: #82CAFF;
+    --gray: #3a3a3a;
+
+}
+
+
+        html, body {
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Poppins;
+        }
+
+        .header {
+            width: 100%;
+            background-color: var(--darkblue);
+            position: fixed;
+            height: clamp(3rem, 8vh, 4rem);
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .contentWrapper {
+            padding-top: clamp(3rem, 8vh, 4rem);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contentInner {
+            text-align: center;
+            display: block;
+        }
+
+        .contentInner div {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: bold;
+            letter-spacing: clamp(1px, 0.3vw, 1.5px);
+            color: #333;
+        }
+
+        #sidebarMenu {
+            height: 100%;
+            position: fixed;
+            right: 0;
+            width: clamp(12rem, 40vw, 18rem);
+            margin-top: clamp(3rem, 8vh, 4rem);
+            transform: translateX(clamp(12rem, 40vw, 18rem));
+            transition: transform 250ms ease-in-out;
+            background: var(--darkblue);
+            z-index: 9;
+        }
+
+        .sidebarMenuContent {
+            margin: 0;
+            padding: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebarMenuContent li {
+            list-style: none;
+            font-family: poppins;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: clamp(1rem, 2vh, 1.25rem);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        .sidebarMenuContent li.current{
+            background: var(--gray);
+        }
+
+        .sidebarMenuContent li .current a{
+            color: #fff;
+        }
+
+        .sidebarMenuContent li:not(.title):hover{
+            background: var(--gray);
+            cursor: pointer;
+        }
+
+        .sidebarMenuContent .title {
+            box-shadow: rgba(0, 0, 0, 0.575) 0rem 0.2rem 1rem;
+            background: rgb(255, 104, 50);
+        }
+
+        .sidebarMenuContent li span {
+            display: block;
+            font-size: clamp(0.6rem, 1.5vw, 0.875rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.3em;
+        }
+
+        .sidebarMenuContent li a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .sidebarMenuContent li:not(.title):hover a{
+            cursor: pointer;
+        }
+        
+        .sidebarMenuContent li > a{
+            display: block;       /* make the <a> a block element */
+
+        }
+
+
+
+        input[type="checkbox"]:checked ~ #sidebarMenu {
+            transform: translateX(0);
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .sidebarToggleIcon {
+            cursor: pointer;
+            position: absolute;
+            top: clamp(1rem, 2vh, 1.5rem);
+            right: clamp(1rem, 2vw, 1.5rem);
+            width: clamp(1.5rem, 4vw, 2rem);
+            height: clamp(1.5rem, 4vw, 2rem);
+            z-index: 99;
+        }
+
+        .bar {
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        .horizontal {
+            margin-top: 3px;
+        }
+
+        .diagonal.part-1,
+        .diagonal.part-2 {
+            position: relative;
+        }
+
+        .diagonal.part-2 {
+            margin-top: 3px;
+        }
+
+        input[type="checkbox"]:checked ~ .sidebarToggleIcon > .horizontal {
+            opacity: 0;
+        }
+
+        input[type="checkbox"]:checked ~ .sidebarToggleIcon > .diagonal.part-1 {
+            transform: rotate(140deg);
+            margin-top: 8px;
+        }
+
+        input[type="checkbox"]:checked ~ .sidebarToggleIcon > .diagonal.part-2 {
+            transform: rotate(-140deg);
+            margin-top: -5px;
+        }
